@@ -1,7 +1,10 @@
 package com.training.chgol.service;
 
+import org.springframework.stereotype.Service;
+
 import java.util.concurrent.atomic.AtomicLong;
 
+@Service("accountNumberGenerator")
 public class IncrementalAccountNumberGenerator implements AccountNumberGenerator {
 
     private AtomicLong counter = new AtomicLong();

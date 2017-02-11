@@ -1,11 +1,13 @@
 package com.training.chgol.service.repository;
 
 import com.training.chgol.entity.Account;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Repository("accountsRepository")
 public class HashMapAccountsRepository implements AccountsRepository {
 
     private Map<String, Account> accounts = new HashMap<>();

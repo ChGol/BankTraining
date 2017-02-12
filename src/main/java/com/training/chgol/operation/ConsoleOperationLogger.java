@@ -8,7 +8,7 @@ public class ConsoleOperationLogger {
 
     private static final String SEPARATOR = "####################################################################";
 
-    @Pointcut("execution(void pl.training.bank.service.AccountsService.process(..)) && args(operation)")
+    @Pointcut("execution(void com.training.chgol.service.AccountsService.process(..)) && args(operation)")
     public void processOperation(Operation operation) {
     }
 

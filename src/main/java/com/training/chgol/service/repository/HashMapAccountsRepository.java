@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Repository("accountsRepository")
 public class HashMapAccountsRepository implements AccountsRepository {
 
     private Map<String, Account> accounts = new HashMap<>();

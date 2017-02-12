@@ -1,6 +1,7 @@
 package com.training.chgol;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.training.chgol.configuration.Beans;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.training.chgol.entity.Account;
 import com.training.chgol.operation.DepositOperation;
 import com.training.chgol.operation.TransferOperation;
@@ -11,7 +12,8 @@ public class App {
 
     public static void main(String[] args) {
 
-        try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml")) {
+        try (AnnotationConfigApplicationContext applicationContext =
+                     new AnnotationConfigApplicationContext(Beans.class)) {
 
             AccountsService accountsService = applicationContext.getBean(AccountsService.class);
 
@@ -23,9 +25,9 @@ public class App {
             accountsService.process(new DepositOperation(secondAccount.getNumber(), 700));
             accountsService.process(new WithdrawOperation(firstAccount.getNumber(), 300));
             accountsService.process(new TransferOperation(firstAccount.getNumber(),
-                                                            secondAccount.getNumber(), 20));
+                    secondAccount.getNumber(), 20));
             accountsService.process(new TransferOperation(secondAccount.getNumber(),
-                                                            thirdAccount.getNumber(), 20));
+                    thirdAccount.getNumber(), 20));
 
             System.out.println(firstAccount);
             System.out.println(secondAccount);

@@ -35,6 +35,15 @@
  
   &ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
   
+  
+  
+  
+  
+  
+  
+  
+ ![OcctoCat](http://octodex.github.com/images/foundingfather_v2.png?style=centerme) 
+
 
   
   

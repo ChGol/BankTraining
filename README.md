@@ -16,7 +16,7 @@
 **_Branch annotations_**:
 
 
-  &ensp;&nbsp;Basic annotation beans configuration
+  &ensp;&nbsp;Basic annotation for beans configuration
 
 **_Branch javaconfig_**:
 
@@ -34,6 +34,12 @@
   
  
   &ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
+  
+  
+  **_Branch AOP_**:
+  
+  &ensp;&nbsp;Bean configuration in xml using aspect-oriented programming
+  
   
   
   

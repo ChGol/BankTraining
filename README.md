@@ -33,7 +33,7 @@
   &ensp;&ensp;&nbsp; There can by problem with setting session timezone for jdbc. To solve it, put this line in jdbc.properties:
   
  
-  &ensp;&ensp;&nbsp; `_database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC_`
+  &ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
   
 
   

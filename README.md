@@ -1,6 +1,6 @@
 ####Hi,
 
-####This is my training project with spring technology. It is a very simple bank simulation.
+####This is my training project in spring technology based on Maven. It is a very simple bank simulation.
 
 ####There are some different branches to expose different tools and methods.
 
@@ -41,8 +41,9 @@
   &ensp;&nbsp;Bean configuration in xml using aspect-oriented programming
   
   
+  **_Branch AOP-javaconfig_**:
   
-  
+  &ensp;&nbsp;Bean configuration by javaconfig using aspect-oriented programming
   
   
   

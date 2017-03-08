@@ -38,17 +38,34 @@
   
   **_Branch AOP_**:
   
-  &ensp;&nbsp;Bean configuration in xml using aspect-oriented programming
+  &ensp;&nbsp;Beans configuration in xml using aspect-oriented programming
   
   
   **_Branch AOP-javaconfig_**:
   
-  &ensp;&nbsp;Bean configuration by javaconfig using aspect-oriented programming
+  &ensp;&nbsp;Beans configuration by javaconfig using aspect-oriented programming
   
   
   **_Branch xml-jdbc_**:
   
-  &ensp;&nbsp;Bean and  AOP configuration in xml. Requirements:
+  &ensp;&nbsp;Beans and  AOP configuration in xml. Requirements:
+  
+  
+  &ensp;&ensp;&nbsp; MySQL server,
+  
+  
+  &ensp;&ensp;&nbsp; You have to run initial MySQL comands from BankTraining/src/main/resources/MySQLimport file,
+ 
+ 
+  &ensp;&ensp;&nbsp; There can be problem with setting session timezone for jdbc. To solve it, put this line in jdbc.properties:
+  
+ 
+  &ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
+  
+  
+  **_Branch javaconfig-jdbc_**:
+  
+  &ensp;&nbsp;Beans and  AOP configuration with javaconfig. Requirements:
   
   
   &ensp;&ensp;&nbsp; MySQL server,

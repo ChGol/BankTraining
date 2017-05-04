@@ -39,12 +39,8 @@ There are some different branches to expose different tools and methods.
 
   &ensp;&nbsp;Hibernate, Beans, AOP configuration with xml. 
   
-  
- ![OcctoCat](http://octodex.github.com/images/foundingfather_v2.png?style=centerme) 
- 
- 
- **_Requirements:_**:
- **(javaconfig, xml-jdbc, Branch javaconfig-jdbc, )**
+**_Requirements:_**:
+**(javaconfig, xml-jdbc, Branch javaconfig-jdbc, )**
    
   
   &ensp;&ensp;&nbsp; MySQL 5.x server,
@@ -57,6 +53,9 @@ There are some different branches to expose different tools and methods.
   
  
   &ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
+  
+  
+  ![OcctoCat](http://octodex.github.com/images/foundingfather_v2.png?style=centerme) 
 
 
   

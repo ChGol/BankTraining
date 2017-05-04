@@ -80,6 +80,10 @@
   &ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
   
   
+  **_Hibernate_**:
+  
+  &ensp;&nbsp;Hibernate, Beans and  AOP configuration with xml.
+  
   
   
   

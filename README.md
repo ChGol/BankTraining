@@ -22,7 +22,6 @@
   
 &ensp;&nbsp;Beans configuration in xml using aspect-oriented programming
   
-  
 **_Branch AOP-javaconfig_**:
   
 &ensp;&nbsp;Beans configuration by javaconfig using aspect-oriented programming
@@ -42,10 +41,16 @@
 **_ Branch Hibernate-javaconfig_**:
   
 &ensp;&nbsp;Hibernate, Beans and  AOP configuration with javaconfig.
+
+**_ Branch jpa-xml_**:
+  
+&ensp;&nbsp;JPA, Hibernate, Beans and  AOP configuration with xml.
+  
   
   
 **_Requirements_**
-**_(for javaconfig, xml-jdbc, javaconfig-jdbc, Hibernate )_**:  
+
+**_(except branch xml and annoatations)_**:  
 
 &ensp;&ensp;&nbsp; MySQL 5.x server,
 
@@ -57,6 +62,8 @@
 
 &ensp;&ensp;&nbsp; while working with hibernate, set db dialect equals to your server e.g. org.hibernate.dialect.MySQL57Dialect
 (see repisitory.xml for branch hibernate or hibernate.properties for barnch hibernate-javaconfig)
+  
+  
   
 ![OcctoCat](http://octodex.github.com/images/foundingfather_v2.png?style=centerme) 
 

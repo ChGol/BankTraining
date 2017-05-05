@@ -45,12 +45,13 @@
 **_Branch jpa-xml_**:
   
 &ensp;&nbsp;JPA, Hibernate, Beans and  AOP configuration with xml.
-  
-  
-  
-**_Requirements_**
 
-**_(except branch xml and annoatations)_**:  
+**_Branch jpa-javaconfig_**:
+  
+&ensp;&nbsp;JPA, Hibernate, Beans and  AOP configuration with javaconfig.
+  
+  
+**_Requirements(except branch xml and annoatations)_**:  
 
 &ensp;&ensp;&nbsp; MySQL 5.x server,
 

@@ -35,13 +35,17 @@
   
 &ensp;&nbsp;Beans and  AOP configuration with javaconfig. 
  
-**_Hibernate_**:
+**_ Branch Hibernate_**:
   
 &ensp;&nbsp;Hibernate, Beans and  AOP configuration with xml.
+
+**_ Branch Hibernate-javaconfig_**:
+  
+&ensp;&nbsp;Hibernate, Beans and  AOP configuration with javaconfig.
   
   
-**_Requirements_**:
-**_(for: javaconfig, xml-jdbc, javaconfig-jdbc, Hibernate )_**:  
+**_Requirements_**
+**_(for javaconfig, xml-jdbc, javaconfig-jdbc, Hibernate )_**:  
 
 &ensp;&ensp;&nbsp; MySQL 5.x server,
 
@@ -50,6 +54,9 @@
 &ensp;&ensp;&nbsp; There can be problem with setting session timezone for jdbc. To solve it, put this line in jdbc.properties:
   
 &ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
+
+&ensp;&ensp;&nbsp; while working with hibernate set db dialect equals to your server e.g. org.hibernate.dialect.MySQL57Dialect
+( repisitory.xml for branch hibernate or hibernate.properties for barnch hibernate-javaconfig)
   
 ![OcctoCat](http://octodex.github.com/images/foundingfather_v2.png?style=centerme) 
 

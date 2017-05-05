@@ -1,8 +1,8 @@
-####Hi,
+### Hi,
 
-####This is my training project in spring technology based on Maven. It is a very simple bank simulation.
+### This is my training project in spring technology based on Maven. It is a very simple bank simulation.
 
-####There are some different branches to expose different tools and methods.
+### There are some different branches to expose different tools and methods.
 
 
 
@@ -34,15 +34,15 @@
   
 &ensp;&nbsp;Beans and  AOP configuration with javaconfig. 
  
-**_ Branch Hibernate_**:
+**_Branch Hibernate_**:
   
 &ensp;&nbsp;Hibernate, Beans and  AOP configuration with xml.
 
-**_ Branch Hibernate-javaconfig_**:
+**_Branch Hibernate-javaconfig_**:
   
 &ensp;&nbsp;Hibernate, Beans and  AOP configuration with javaconfig.
 
-**_ Branch jpa-xml_**:
+**_Branch jpa-xml_**:
   
 &ensp;&nbsp;JPA, Hibernate, Beans and  AOP configuration with xml.
   

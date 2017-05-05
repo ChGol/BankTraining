@@ -1,18 +1,20 @@
 package com.training.chgol;
 
+import com.training.chgol.config.Beans;
 import com.training.chgol.entity.Account;
 import com.training.chgol.operation.DepositOperation;
 import com.training.chgol.operation.TransferOperation;
 import com.training.chgol.operation.WithdrawOperation;
 import com.training.chgol.service.AccountsService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class App {
 
     public static void main(String[] args) {
 
-        try (ClassPathXmlApplicationContext applicationContext =
-                     new ClassPathXmlApplicationContext("beans.xml")) {
+        try (AnnotationConfigApplicationContext applicationContext =
+                     new AnnotationConfigApplicationContext(Beans.class)) {
 
             AccountsService accountsService = applicationContext.getBean(AccountsService.class);
 

@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Table(name = "`accounts`")
+@Table(name = "accounts")
 @Entity
 public class Account implements Serializable {
 
@@ -14,11 +14,18 @@ public class Account implements Serializable {
     private Long id;
     @Column(unique = true)
     private String number;
+    //@Transient
     private long balance;
     @ManyToMany
     private List<Customer> customers = new ArrayList<>();
 
     public Account() {
+    }
+
+    public Account(String number, long balance, List<Customer> customers) {
+        this.number = number;
+        this.balance = balance;
+        this.customers = customers;
     }
 
     public Account(String number) {

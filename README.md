@@ -55,8 +55,8 @@
   
 &ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
 
-&ensp;&ensp;&nbsp; while working with hibernate set db dialect equals to your server e.g. org.hibernate.dialect.MySQL57Dialect
-( repisitory.xml for branch hibernate or hibernate.properties for barnch hibernate-javaconfig)
+&ensp;&ensp;&nbsp; while working with hibernate, set db dialect equals to your server e.g. org.hibernate.dialect.MySQL57Dialect
+(see repisitory.xml for branch hibernate or hibernate.properties for barnch hibernate-javaconfig)
   
 ![OcctoCat](http://octodex.github.com/images/foundingfather_v2.png?style=centerme) 
 

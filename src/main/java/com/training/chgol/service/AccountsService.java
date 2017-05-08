@@ -4,11 +4,9 @@ import com.training.chgol.entity.Account;
 import com.training.chgol.operation.Operation;
 import com.training.chgol.service.repository.AccountsRepository;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-@Transactional
 public class AccountsService {
 
     private AccountsRepository accountsRepository;
@@ -34,14 +32,12 @@ public class AccountsService {
         return new ArrayList<>();
     }
 
-
     public void init() {
-        System.out.println("Accounts Service init............");
+        System.out.println("AccountsService init...");
     }
 
-
     public void destroy() {
-        System.out.println("Accounts Service destroy..............");
+        System.out.println("AccountsService destroy...");
     }
 
 }

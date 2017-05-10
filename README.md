@@ -53,6 +53,11 @@
 **_Branch spring-data-xml_**:
 
 &ensp;&nbsp;Spring Data JPA, Beans and  AOP configuration with xml.
+
+**_Branch spring-data-javaconfig_**:
+
+&ensp;&nbsp;Spring Data JPA, Beans and  AOP configuration with javaconfig.
+
   
 **_Requirements(except branch xml and annoatations)_**:  
 

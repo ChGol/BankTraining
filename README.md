@@ -52,11 +52,15 @@
 
 **_Branch spring-data-xml_**:
 
-&ensp;&nbsp;Spring Data JPA, Beans and  AOP configuration with xml.
+&ensp;&nbsp;Spring Data, Beans and  AOP configuration with xml.
 
 **_Branch spring-data-javaconfig_**:
 
-&ensp;&nbsp;Spring Data JPA, Beans and  AOP configuration with javaconfig.
+&ensp;&nbsp;Spring Data, Beans and  AOP configuration with javaconfig.
+
+**_Branch spring-mvc-xml_**:
+
+&ensp;&nbsp;Spring MVC, Spring Data, Beans and  AOP configuration with xml.
 
   
 **_Requirements(except branch xml and annoatations)_**:  
@@ -72,7 +76,10 @@
 &ensp;&ensp;&nbsp; while working with hibernate, set db dialect equals to your server e.g. org.hibernate.dialect.MySQL57Dialect
 (see repisitory.xml for branch hibernate or hibernate.properties for barnch hibernate-javaconfig)
   
-  
+
+**_Requirements for branch spring-mvc-xml_**: 
+
+&ensp;&ensp;&nbsp; TomCat 8 or higher for web application archive deployment
   
 ![OcctoCat](http://octodex.github.com/images/foundingfather_v2.png?style=centerme) 
 

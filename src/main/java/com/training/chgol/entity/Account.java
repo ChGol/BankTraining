@@ -14,7 +14,6 @@ public class Account implements Serializable {
     private Long id;
     @Column(unique = true)
     private String number;
-    //@Transient
     private long balance;
     @ManyToMany
     private List<Customer> customers = new ArrayList<>();

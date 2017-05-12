@@ -62,6 +62,10 @@
 
 &ensp;&nbsp;Spring MVC, Spring Data, Beans and  AOP configuration with xml.
 
+**_Branch spring-mvc-javaconfig_**:
+
+&ensp;&nbsp;Spring MVC, Spring Data, Beans and  AOP configuration with javaconfig.
+
   
 **_Requirements(except branch xml and annoatations)_**:  
 
@@ -77,7 +81,7 @@
 (see repisitory.xml for branch hibernate or hibernate.properties for barnch hibernate-javaconfig)
   
 
-**_Requirements for branch spring-mvc-xml_**: 
+**_Requirements for branch spring-mvc-xml and spring-mvc-javaconfig_**: 
 
 &ensp;&ensp;&nbsp; TomCat 8 or higher for web application archive deployment
   

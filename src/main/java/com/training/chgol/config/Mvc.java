@@ -2,6 +2,7 @@ package com.training.chgol.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ResourceBundleMessageSource;
@@ -11,7 +12,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import com.training.chgol.dto.DtoMapper;
 
+@ComponentScan(basePackages = "com.training.chgol.controller")
 @EnableWebMvc
 @Import(Beans.class)
 @Configuration
@@ -19,8 +22,8 @@ public class Mvc extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-       registry.addViewController("/").setViewName("index");
-       registry.addViewController("index.html").setViewName("index");
+        registry.addViewController("/").setViewName("index");
+        registry.addViewController("index.html").setViewName("index");
     }
 
     @Override
@@ -41,6 +44,11 @@ public class Mvc extends WebMvcConfigurerAdapter {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("text");
         return messageSource;
+    }
+
+    @Bean
+    public DtoMapper dtoMapper() {
+        return new DtoMapper();
     }
 
 }

@@ -1,6 +1,10 @@
 package com.training.chgol.operation;
 
+@OperationComponent
 public class TransferOperation extends Operation {
+
+    public TransferOperation() {
+    }
 
     public TransferOperation(String sourceAccountNumber, String destinationAccountNumber, long funds) {
         super(sourceAccountNumber, funds);

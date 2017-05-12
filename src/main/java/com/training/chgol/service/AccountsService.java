@@ -1,12 +1,13 @@
 package com.training.chgol.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.transaction.annotation.Transactional;
 import com.training.chgol.entity.Account;
 import com.training.chgol.operation.Operation;
+import com.training.chgol.service.repository.AccountNotFoundException;
 import com.training.chgol.service.repository.AccountsRepository;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.training.chgol.service.repository.ResultPage;
 
 @Transactional
 public class AccountsService {
@@ -30,8 +31,17 @@ public class AccountsService {
         operation.execute();
     }
 
-    public List<Account> getAccounts(int pageNumber, int pageSize) {
-        return new ArrayList<>();
+    public Account getById(long id) {
+        Account account = accountsRepository.findOne(id);
+        if (account == null) {
+            throw new AccountNotFoundException();
+        }
+        return account;
+    }
+
+    public ResultPage<Account> getAccounts(int pageNumber, int pageSize) {
+        Page<Account> result = accountsRepository.findAll(new PageRequest(pageNumber, pageSize));
+        return new ResultPage<>(result.getContent(), result.getNumber(), result.getTotalPages());
     }
 
     public void init() {

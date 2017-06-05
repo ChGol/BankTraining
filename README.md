@@ -71,8 +71,11 @@
 &ensp;&nbsp;Foundations for REST bank simulation.Spring MVC, Spring Data, Beans and  AOP configuration with javaconfig. 
 
 &ensp;&ensp;&nbsp; empty POST request on http://localhost:8080/api/accounts   --> next account creation
+
 &ensp;&ensp;&nbsp; GET request on http://localhost:8080/api/accounts  --> list all accounts
+
 &ensp;&ensp;&nbsp; GET request on http://localhost:8080/api/accounts/{id} --> get account with given id
+
 
 **_Requirements(except branch xml and annoatations)_**:  
 
@@ -90,9 +93,12 @@
 
 **_Requirements for branch spring-mvc-xml and spring-mvc-javaconfig_**: 
 
-&ensp;&ensp;&nbsp; to compile app use maven command: mvn compile war:war
+
+&ensp;&ensp;&nbsp; To compile app use maven command: mvn compile war:war
+
 
 &ensp;&ensp;&nbsp; TomCat 8 or higher for web application archive deployment
+
   
 ![OcctoCat](http://octodex.github.com/images/foundingfather_v2.png?style=centerme) 
 

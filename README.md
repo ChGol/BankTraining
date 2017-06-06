@@ -123,7 +123,7 @@
 
 &ensp;&ensp;&nbsp; POST request on http://localhost:8080/api/operations with body:
 
-&ensp;&ensp;&nbsp;JSON: {"name":"transferOperation", "sourceAccountNumber":"00000000000000000000000001", "funds":50 }
+&ensp;&ensp;&nbsp;JSON: {"name":"transferOperation", "sourceAccountNumber":"00000000000000000000000001", "destinationAccountNumber":"00000000000000000000000002", "funds":90 }
 
 &ensp;&ensp;&nbsp;Header: "content-type", "application/json"
 

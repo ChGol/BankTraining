@@ -12,7 +12,8 @@ import static com.training.chgol.dto.ExceptionDto.Type.APPLICATION_EXCEPTION;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity onException() {
+    public ResponseEntity onException(Exception e) {
+        e.printStackTrace();
         return new ResponseEntity(new ExceptionDto(APPLICATION_EXCEPTION), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

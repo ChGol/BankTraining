@@ -5,7 +5,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 
-public class OperationFactory implements BeanFactoryAware {
+public class OperationResolver implements BeanFactoryAware {
 
     private BeanFactory beanFactory;
 

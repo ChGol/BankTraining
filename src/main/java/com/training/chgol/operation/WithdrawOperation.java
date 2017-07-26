@@ -2,7 +2,6 @@ package com.training.chgol.operation;
 
 import com.training.chgol.entity.Account;
 
-@OperationComponent
 public class WithdrawOperation extends Operation {
 
     public WithdrawOperation() {

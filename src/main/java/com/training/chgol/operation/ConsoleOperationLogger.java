@@ -1,7 +1,7 @@
 package com.training.chgol.operation;
 
-import com.training.chgol.BankException;
 import org.aspectj.lang.annotation.*;
+import com.training.chgol.BankException;
 
 @Aspect
 public class ConsoleOperationLogger {
@@ -19,7 +19,7 @@ public class ConsoleOperationLogger {
     }
 
     @AfterReturning("processOperation(operation)")
-    public void onSuccess(Operation operation) {
+    public  void onSuccess(Operation operation) {
         System.out.format("Status: success\n%s\n", SEPARATOR);
     }
 

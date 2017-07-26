@@ -1,13 +1,18 @@
-package com.training.chgol.dto;
+package com.training.chgol.viewmodel;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.training.chgol.validation.Funds;
 
-@XmlRootElement(name = "operation")
-public class OperationDto {
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+public class OperationModel {
 
     private String name;
-    private String sourceAccountNumber;
+    @Pattern(regexp = "\\d{26}")
+    @NotNull
+    private String sourceAccountNumber = "00000000000000000000000001";
     private String destinationAccountNumber;
+    @Funds(maxValue = 2000)
     private long funds;
 
     public String getName() {

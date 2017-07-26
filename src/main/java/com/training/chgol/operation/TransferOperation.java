@@ -1,6 +1,5 @@
 package com.training.chgol.operation;
 
-@OperationComponent
 public class TransferOperation extends Operation {
 
     public TransferOperation() {

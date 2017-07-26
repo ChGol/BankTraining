@@ -1,57 +1,60 @@
 package com.training.chgol.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import com.training.chgol.dto.ExceptionDto;
-import com.training.chgol.dto.OperationDto;
-import com.training.chgol.operation.InsufficientFundsException;
-import com.training.chgol.operation.NoSuchOperationException;
 import com.training.chgol.operation.Operation;
-import com.training.chgol.operation.OperationFactory;
 import com.training.chgol.service.AccountsService;
-import com.training.chgol.service.repository.AccountNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import com.training.chgol.operation.OperationResolver;
+import com.training.chgol.viewmodel.OperationModel;
 
-import static com.training.chgol.dto.ExceptionDto.Type.*;
 
-@CrossOrigin
-@RequestMapping("api/operations")
-@RestController
+import javax.validation.Valid;
+
+@RequestMapping("operationForm.html")
+@Controller
 public class OperationsController {
 
     private AccountsService accountsService;
-    private OperationFactory operationFactory;
+    private OperationResolver operationResolver;
 
     @Autowired
-    public OperationsController(AccountsService accountsService, OperationFactory operationFactory) {
+    public OperationsController(AccountsService accountsService, OperationResolver operationResolver) {
         this.accountsService = accountsService;
-        this.operationFactory = operationFactory;
+        this.operationResolver = operationResolver;
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView showOperationForm() {
+        ModelAndView modelAndView = new ModelAndView("operationForm");
+        modelAndView.addObject(new OperationModel());
+        return modelAndView;
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity process(@RequestBody OperationDto operationDto) {
-        Operation operation = operationFactory.get(operationDto.getName());
-        operation.setSourceAccountNumber(operationDto.getSourceAccountNumber());
-        operation.setDestinationAccountNumber(operationDto.getDestinationAccountNumber());
-        operation.setFunds(operationDto.getFunds());
+    public ModelAndView processOperation(@Valid OperationModel operationModel, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ModelAndView("operationForm");
+        }
+
+
+        Operation operation = operationResolver.get(operationModel.getName());
+        operation.setSourceAccountNumber(operationModel.getSourceAccountNumber());
+        operation.setDestinationAccountNumber(operationModel.getDestinationAccountNumber());
+        operation.setFunds(operationModel.getFunds());
         accountsService.process(operation);
-        return ResponseEntity.noContent().build();
-    }
 
-    @ExceptionHandler(AccountNotFoundException.class)
-    public ResponseEntity onAccountNotFound() {
-        return new ResponseEntity(new ExceptionDto(ACCOUNT_NOT_FOUND), HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler(InsufficientFundsException.class)
-    public ResponseEntity onInsufficientFunds() {
-        return new ResponseEntity(new ExceptionDto(INSUFFICIENT_FUNDS), HttpStatus.PRECONDITION_FAILED);
-    }
-
-    @ExceptionHandler(NoSuchOperationException.class)
-    public ResponseEntity onNoSuchOperationException() {
-        return new ResponseEntity(new ExceptionDto(UNKNOWN_OPERATION), HttpStatus.BAD_REQUEST);
+        ModelAndView modelAndView = new ModelAndView("processOperationConfirmation");
+        modelAndView.addObject("operation", operationModel);
+        modelAndView.addObject("sourceAccount", accountsService.getAccountByNumber(operationModel.getSourceAccountNumber()));
+        if (operationModel.getName().equals("transferOperation")) {
+            modelAndView.addObject("destinationAccount", accountsService.getAccountByNumber(operationModel.getDestinationAccountNumber()));
+        }
+        modelAndView.addObject("sourceAccount", accountsService.getAccountByNumber(operationModel.getSourceAccountNumber()));
+        return modelAndView;
     }
 
 }

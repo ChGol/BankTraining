@@ -1,19 +1,17 @@
 package com.training.chgol.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import com.training.chgol.dto.DtoMapper;
-import com.training.chgol.operation.ConsoleOperationLogger;
-import com.training.chgol.operation.OperationFactory;
-import com.training.chgol.service.AccountNumberGenerator;
 import com.training.chgol.service.AccountsService;
-import com.training.chgol.service.JpaIncrementalAccountNumberGenerator;
 import com.training.chgol.service.repository.AccountsRepository;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.*;
+import com.training.chgol.operation.*;
+import com.training.chgol.service.AccountNumberGenerator;
+import com.training.chgol.service.JpaIncrementalAccountNumberGenerator;
 
 import javax.persistence.EntityManagerFactory;
 
-@EnableJpaRepositories(basePackages = "com.training.chgol.service.repository")
+@Import(Repository.class)
+@EnableAspectJAutoProxy
 @Configuration
 public class Beans {
 
@@ -33,13 +31,26 @@ public class Beans {
     }
 
     @Bean
-    public OperationFactory operationFactory() {
-        return new OperationFactory();
+    public OperationResolver operationResolver() {
+        return new OperationResolver();
     }
 
+    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
     @Bean
-    public DtoMapper dtoMapper() {
-        return new DtoMapper();
+    public DepositOperation depositOperation() {
+        return new DepositOperation();
+    }
+
+    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
+    @Bean
+    public WithdrawOperation withdrawOperation() {
+        return new WithdrawOperation();
+    }
+
+    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
+    @Bean
+    public TransferOperation transferOperation() {
+        return new TransferOperation();
     }
 
 }

@@ -54,6 +54,7 @@
                     </p>
                 </div>
                 <sf:hidden path="name" value="${param.operationType}Operation"/>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <button type="submit" class="btn btn-default"><s:message code="next"/></button>
             </sf:form>
         </div>

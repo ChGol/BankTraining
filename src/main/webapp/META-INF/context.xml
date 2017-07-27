@@ -1,8 +1,8 @@
 <Context>
 
-    <Resource name="jdbc/banktrainingh" auth="Container" type="javax.sql.DataSource"
-              maxActive="100" maxIdle="30" maxWait="10000"
-              username="root" password="admin" driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/bankTrainingH?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+    <Resource name="jdbc/bank_training_security" auth="Container" type="javax.sql.DataSource"
+              maxTotal="100" maxIdle="30" axWaitMillis="10000"
+              username="root" password="admin" driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/bank_training_security?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useSSL=false"/>
 
 </Context>

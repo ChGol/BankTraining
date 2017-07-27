@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,8 +16,15 @@
                 <li><a href="createAccount.html"><s:message code="index.createAccountLink"/></a></li>
                 <li><a href="operationForm.html?operationType=deposit"><s:message code="index.depositFundsLink"/></a></li>
                 <li><a href="operationForm.html?operationType=withdraw"><s:message code="index.withdrawFundsLink"/></a></li>
-                <li><a href="operationForm.html?operationType=transfer"><s:message code="index.transferFundsLink"/></a></li>
-               <li><a href="logout.html"><s:message code="index.logoutLink"/></a></li>
+                <sec:authorize access="hasRole('MANAGER')">
+                    <li><a href="operationForm.html?operationType=transfer"><s:message code="index.transferFundsLink"/></a></li>
+                </sec:authorize>
+               <li>
+                   <a href="logout.html">
+                       <s:message code="index.logoutLink"/>
+                       <sec:authentication property="principal.username"/>
+                   </a>
+               </li>
             </ul>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

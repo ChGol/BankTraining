@@ -25,7 +25,7 @@ public class Repository {
 
     @Bean(destroyMethod = "")
     public DataSource dataSource() {
-        return new JndiDataSourceLookup().getDataSource("java:comp/env/jdbc/banktrainingh");
+        return new JndiDataSourceLookup().getDataSource("java:comp/env/jdbc/bank_training_security");
     }
 
     @Bean

@@ -78,6 +78,10 @@
 
 &ensp;&nbsp;REST bank simulation created with jsp.
 
+**_19. Branch: javaconfig-mvc-jsp_**:
+
+&ensp;&nbsp;Bank simulation upgraded with spring security. Use MySQL commands from MySQLimport.sql file. When inserting new users ino table remember to encrypt passwords with MD5. Test user: Kate (password test_user)
+
 **_Requirements(except branch xml and annoatations)_**:  
 
 &ensp;&ensp;&nbsp; MySQL 5.x server,
@@ -86,13 +90,13 @@
  
 &ensp;&ensp;&nbsp; There can be problem with setting session timezone for jdbc. To solve it, put this line in jdbc.properties:
   
-&ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC`
+&ensp;&ensp;&nbsp; `database.url=jdbc:mysql://localhost:3306/bankTraining?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false`
 
 &ensp;&ensp;&nbsp; while working with hibernate, set db dialect equals to your server e.g. org.hibernate.dialect.MySQL57Dialect
 (see repisitory.xml for branch hibernate or hibernate.properties for barnch hibernate-javaconfig)
   
 
-**_Extra Requirements for branch spring-mvc-xml, spring-mvc-javaconfig, spring-mvc-rest__**: 
+**_Extra Requirements for branches with higher number than 13__**: 
 
 &ensp;&ensp;&nbsp; To compile app use maven command: mvn compile war:war
 

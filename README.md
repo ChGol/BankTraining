@@ -74,6 +74,10 @@
 
 &ensp;&nbsp;Foundations for REST bank simulation with Springboot. 
 
+**_18. Branch: javaconfig-mvc-jsp_**:
+
+&ensp;&nbsp;REST bank simulation created with jsp.
+
 **_Requirements(except branch xml and annoatations)_**:  
 
 &ensp;&ensp;&nbsp; MySQL 5.x server,

@@ -23,7 +23,7 @@ import java.util.Properties;
 @Configuration
 public class Repository {
 
-    @Bean(destroyMethod = "")
+    @Bean
     public DataSource dataSource() {
         return new JndiDataSourceLookup().getDataSource("java:comp/env/jdbc/bank_training_security");
     }

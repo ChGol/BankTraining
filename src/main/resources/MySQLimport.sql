@@ -15,7 +15,7 @@ CREATE TABLE `authorities` (
   PRIMARY KEY (`username`)
 );
 
-INSERT INTO `authorities` VALUES ('user1','ROLE_ADMIN');
+INSERT INTO `authorities` VALUES ('Kate','ROLE_ADMIN');
 
 CREATE TABLE `users` (
   `username` varchar(45),
